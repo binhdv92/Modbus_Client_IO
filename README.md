@@ -10,16 +10,17 @@
 
 2. Open **Modbus_Client_IO.sln** by Visual Studio (I used the version of Visual Studio 2019)
 3. Check or install the EasyModbusTCP library package on NuGet as below:
-![tu01](tu01.png)
+![tu01.png](_media/tu01.png)
 
 # Enjoin the result
 - 1. the main window software will be like below when you build success.
 ![result01](_media/result01.png)
 
 - 2. I used a [Free Modbus PLC Simulator](http://www.plcsimulator.org/) to simulate a modbus on exactly my laptop to communnicate with this project.
--- Digital Input at simulator:
+- - Digital Input at simulator:
 ![result02](_media/result02.png)
--- Digital Output at simulator:
+
+- - Digital Output at simulator:
 ![result02](_media/result03.png)
 
 # Reference
