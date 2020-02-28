@@ -14,14 +14,14 @@
 4. Click **Build** or press ** Ctrl+Shift+B** to build the solution on Visual Studio.
 
 # Enjoin the result
-- 1. the main window software will be like below when you build success.
+1. the main window software will be like below when you build success.
 ![result01](_media/result01.png)
 
-- 2. I used a [Free Modbus PLC Simulator](http://www.plcsimulator.org/) to simulate a modbus on exactly my laptop to communnicate with this project.
-- - Digital Input at simulator:
+2. I used a [Free Modbus PLC Simulator](http://www.plcsimulator.org/) to simulate a modbus on exactly my laptop to communnicate with this project.
+ -- Digital Input at simulator:
 ![result02](_media/result02.png)
 
-- - Digital Output at simulator:
+ -- Digital Output at simulator:
 ![result02](_media/result03.png)
 
 # Reference
