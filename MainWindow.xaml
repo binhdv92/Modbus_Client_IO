@@ -1,0 +1,122 @@
+﻿<Window x:Class="SAW_TRAY_IO.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SAW_TRAY_IO"
+        mc:Ignorable="d"
+        Title="Modbus Client IO V01" Height="396" Width="897.5" Loaded="Window_Loaded"
+        >
+
+    <GroupBox Header="Control Panel" HorizontalAlignment="Left" VerticalAlignment = "Top" Height="352" Width="876" Margin="0">
+        <StackPanel Margin="0" Orientation="Horizontal">
+            <GroupBox Header="Connection"  Margin="0">
+                <StackPanel Margin="0">
+                    <StackPanel Orientation = "Horizontal" Grid.ColumnSpan="2">
+                        <Label  Content = "Modbus Server IP" Margin="5" HorizontalAlignment="Left" VerticalAlignment = "Top" Height ="25" Width = "110"/>
+                        <TextBox  x:Name="tb_Modbus_Server_IP" Text="172.18.87.129" Margin="5" HorizontalAlignment="Left" VerticalAlignment = "Top" Height ="25" Width = "110"/>
+                    </StackPanel>
+                    <StackPanel Orientation = "Horizontal" Grid.ColumnSpan="2">
+                        <Label Content = "Port" Margin="5" HorizontalAlignment="Left" VerticalAlignment = "Top" Height ="25" Width = "110"/>
+                        <TextBox x:Name="tb_Modbus_Server_Port" Text="502" Margin="5" HorizontalAlignment="Left" VerticalAlignment = "Top" Height ="25" Width = "110"/>
+                    </StackPanel>
+                    <StackPanel Orientation = "Horizontal" Grid.ColumnSpan="2">
+                        <Label Content = "Connection Status:" Margin="5" HorizontalAlignment="Left" VerticalAlignment = "Top" Height ="25" Width = "110"/>
+                        <Label x:Name="lb_Connection_Status" Content = "Offline" Margin="5" HorizontalAlignment="Left" VerticalAlignment = "Top" Height ="25" Width = "110"/>
+                    </StackPanel>
+                    <StackPanel Orientation = "Horizontal" Grid.ColumnSpan="2">
+                        <Button Content="Connect" Margin="5" HorizontalAlignment="Left" VerticalAlignment = "Top" Height ="25" Width = "110" Click="Button_Click"/>
+                        <Button Content="Disconnect" Margin="5" HorizontalAlignment="Left" VerticalAlignment = "Top" Height ="25" Width = "110" Click="Button_Click"/>
+                    </StackPanel>
+                    <GroupBox Header="About me" Height="Auto" Margin="0">
+                        <TextBlock Height="141" FontSize="10" Margin="0,0,-2,0" TextWrapping="WrapWithOverflow" Width="244" ><Run Text="Modbus Client IO Project"/><LineBreak/><Run Text="Author:"/><LineBreak/><Run Text=" - Duong, Van Binh (binhdv92@gmail.com)"/><LineBreak/><Run Text="Github:"/><LineBreak/><Run Text=" - https://github.com/binhdv92/Modbus_Client_IO.git"/></TextBlock>
+                    </GroupBox>
+                </StackPanel>
+            </GroupBox>
+
+            <!--Digital Input -->
+            <GroupBox Header="Digital Input" VerticalAlignment="Stretch" Width="300" Margin="0" Foreground="Black">
+                <StackPanel Margin="5" Background="Transparent">
+                    <StackPanel Margin="0" Orientation="Horizontal">
+                        <Image x:Name="im_DI_00"  Margin="5" Height="25"/>
+                        <CheckBox x:Name="Cb_DI_00" Content="DI-00" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5.4,0,0"  FontSize="20" BorderThickness="8" Width="110" IsEnabled="False" Background="#FFF3E919" BorderBrush="#FFFBCD00"/>
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="200" FontSize="20" x:Name="Lb_DI_00_Name"  Content="N/A"/>
+                    </StackPanel>
+                    <StackPanel Margin="0" Orientation="Horizontal">
+                        <Image x:Name="im_DI_01"  Margin="5" Height="25"/>
+                        <CheckBox x:Name="Cb_DI_01" Content="DI-01" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5.4,0,0"  FontSize="20" BorderThickness="8" Width="110" IsEnabled="False"/>
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="200" FontSize="20" x:Name="Lb_DI_01_Name" Content="N/A"/>
+                    </StackPanel>
+                    <StackPanel Margin="0" Orientation="Horizontal">
+                        <Image x:Name="im_DI_02"  Margin="5" Height="25"/>
+                        <CheckBox x:Name="Cb_DI_02" Content="DI-02" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5.4,0,0"  FontSize="20" BorderThickness="8" Width="110" IsEnabled="False"/>
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="200" FontSize="20" x:Name="Lb_DI_02_Name" Content="N/A"/>
+                    </StackPanel>
+                    <StackPanel Margin="0" Orientation="Horizontal">
+                        <Image x:Name="im_DI_03"  Margin="5" Height="25"/>
+                        <CheckBox x:Name="Cb_DI_03" Content="DI-03" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5.4,0,0"  FontSize="20" BorderThickness="8" Width="110" IsEnabled="False"/>
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="200" FontSize="20" x:Name="Lb_DI_03_Name" Content="N/A"/>
+                    </StackPanel>
+                    <StackPanel Margin="0" Orientation="Horizontal">
+                        <Image x:Name="im_DI_04"  Margin="5" Height="25"/>
+                        <CheckBox x:Name="Cb_DI_04" Content="DI-04" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5.4,0,0"  FontSize="20" BorderThickness="8" Width="110" IsEnabled="False"/>
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="200" FontSize="20" x:Name="Lb_DI_04_Name" Content="N/A"/>
+                    </StackPanel>
+                    <StackPanel Margin="0" Orientation="Horizontal">
+                        <Image x:Name="im_DI_05"  Margin="5" Height="25"/>
+                        <CheckBox x:Name="Cb_DI_05" Content="DI-05" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5.4,0,0"  FontSize="20" BorderThickness="8" Width="110" IsEnabled="False"/>
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="200" FontSize="20" x:Name="Lb_DI_05_Name" Content="N/A"/>
+                    </StackPanel>
+                    <StackPanel Margin="0" Orientation="Horizontal">
+                        <Image x:Name="im_DI_06"  Margin="5" Height="25"/>
+                        <CheckBox x:Name="Cb_DI_06" Content="DI-06" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5.4,0,0"  FontSize="20" BorderThickness="8" Width="110" IsEnabled="False"/>
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="200" FontSize="20" x:Name="Lb_DI_06_Name" Content="N/A"/>
+                    </StackPanel>
+                    <StackPanel Margin="0" Orientation="Horizontal">
+                        <Image x:Name="im_DI_07"  Margin="5" Height="25"/>
+                        <CheckBox x:Name="Cb_DI_07" Content="DI-07" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5.4,0,0"  FontSize="20" BorderThickness="8" Width="110" IsEnabled="False"/>
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="200" FontSize="20" x:Name="Lb_DI_07_Name" Content="N/A"/>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+
+            <!-- Digital Output -->
+            <GroupBox Header="Digital Output" VerticalAlignment="Stretch" Width="300" Margin="0" Foreground="Black">
+                <StackPanel Margin="5">
+                    <StackPanel Margin="0" Orientation="Horizontal">
+                        <CheckBox x:Name="Cb_DO_00" Content="DO-00" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5.4,0,0" Padding="0" FontSize="20" BorderThickness="8" Width="110" Checked="Cb_DO_00_CheckBox_Checked" Unchecked="Cb_DO_00_CheckBox_Unchecked"/>
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="200" FontSize="20" x:Name="Lb_DO_00_Name" Content="N/A"/>
+                    </StackPanel>
+                    <StackPanel Margin="0" Orientation="Horizontal">
+                        <CheckBox x:Name="Cb_DO_01" Content="DO-01" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,6,0,0" Padding="0" FontSize="20" BorderThickness="8,8,8,8" Width="110" Checked="Cb_DO_01_CheckBox_Checked" Unchecked="Cb_DO_01_CheckBox_Unchecked"/>
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="200" FontSize="20" x:Name="Lb_DO_01_Name" Content="N/A"/>
+                    </StackPanel>
+                    <StackPanel Margin="0" Orientation="Horizontal">
+                        <CheckBox x:Name="Cb_DO_02" Content="DO-02" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,6,0,0" Padding="0" FontSize="20" BorderThickness="8" Width="110" Checked="Cb_DO_02_CheckBox_Checked" Unchecked="Cb_DO_02_CheckBox_Unchecked"/>
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="200" FontSize="20" x:Name="Lb_DO_02_Name" Content="N/A"/>
+                    </StackPanel>
+                    <StackPanel Margin="0" Orientation="Horizontal">
+                        <CheckBox x:Name="Cb_DO_03" Content="DO-03" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,6,0,0" Padding="0" FontSize="20" BorderThickness="8" Width="110" Checked="Cb_DO_03_CheckBox_Checked" Unchecked="Cb_DO_03_CheckBox_Unchecked"/>
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="200" FontSize="20" x:Name="Lb_DO_03_Name" Content="N/A"/>
+                    </StackPanel>
+                    <StackPanel Margin="0" Orientation="Horizontal">
+                        <CheckBox x:Name="Cb_DO_04" Content="DO-04" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,6,0,0" Padding="0" FontSize="20" BorderThickness="8" Width="110" Checked="Cb_DO_04_CheckBox_Checked" Unchecked="Cb_DO_04_CheckBox_Unchecked"/>
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="200" FontSize="20" x:Name="Lb_DO_04_Name" Content="N/A"/>
+                    </StackPanel>
+                    <StackPanel Margin="0" Orientation="Horizontal">
+                        <CheckBox x:Name="Cb_DO_05" Content="DO-05" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,6,0,0" BorderThickness="8" Padding="0" FontSize="20" Width="110" Checked="Cb_DO_05_CheckBox_Checked" Unchecked="Cb_DO_05_CheckBox_Unchecked"/>
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="200" FontSize="20" x:Name="Lb_DO_05_Name" Content="N/A"/>
+                    </StackPanel>
+                    <StackPanel Margin="0" Orientation="Horizontal">
+                        <CheckBox x:Name="Cb_DO_06" Content="DO-06" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,6,0,0" BorderThickness="8" Padding="0" FontSize="20" Width="110" Checked="Cb_DO_06_CheckBox_Checked" Unchecked="Cb_DO_06_CheckBox_Unchecked"/>
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="200" FontSize="20" x:Name="Lb_DO_06_Name" Content="N/A"/>
+                    </StackPanel>
+                    <StackPanel Margin="0" Orientation="Horizontal">
+                        <CheckBox x:Name="Cb_DO_07" Content="DO-07" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,6,0,0" Padding="0" FontSize="20" BorderThickness="8" Width="110" Checked="Cb_DO_07_CheckBox_Checked" Unchecked="Cb_DO_07_CheckBox_Unchecked"/>
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="200" FontSize="20" x:Name="Lb_DO_07_Name" Content="N/A"/>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </GroupBox>
+</Window>
