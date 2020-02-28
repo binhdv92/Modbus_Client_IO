@@ -11,6 +11,7 @@
 2. Open **Modbus_Client_IO.sln** by Visual Studio (I used the version of Visual Studio 2019)
 3. Check or install the EasyModbusTCP library package on NuGet as below:
 ![tu01.png](_media/tu01.png)
+4. Click **Build** or press ** Ctrl+Shift+B** to build the solution on Visual Studio.
 
 # Enjoin the result
 - 1. the main window software will be like below when you build success.
