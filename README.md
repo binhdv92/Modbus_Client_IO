@@ -2,7 +2,6 @@
 
 # Introduction
 - This project aim to create a software is working as a Modbus Client protocol run on Windows environment.
-- This project used 
 
 # How to use
 1. Clone this project.
